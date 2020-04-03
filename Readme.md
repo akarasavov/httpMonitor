@@ -15,7 +15,7 @@ Use `mvn` in the root of the project build it:
 
 ```mvn clean package```
 
-If you don't want to build a project you can find the _httpMonitor.jar_ and _simulator.jar_ in the root of the project
+If you don't want to build a project you can find the `httpMonitor.jar` and `simulator.jar` in the root of the project
 
 ### How to run monitor
 
@@ -40,15 +40,15 @@ The central entity in the system in `EventBus`, which is used for asynchronous c
 
 ### Description main classes
 
-TailFileListener - listen changes from file and publish `AccessLogLineEvent` into event queue
+`TailFileListener` - Listen changes from file and publish `AccessLogLineEvent` into event queue
 
-AccessLogParser - Fetch parameters from common log line and publish `AccessLogEvent`
+`AccessLogParser` - Fetch parameters from common log line and publish `AccessLogEvent`
 
-TrafficCalculator - Listen and accumulate `AccessLogEvent`. Based on `ticInterval` calculate traffic parameters and publish them into event bus
+`TrafficCalculator` - Listen and accumulate `AccessLogEvent`. Based on `ticInterval` calculate traffic parameters and publish them into event bus
 
-AlertCalculator - Listen and accumulate `TrafficStatisticEvents`. Based on `alertInterval`, trigger event for activating or hiding an event.
+`AlertCalculator` - Listen and accumulate `TrafficStatisticEvents`. Based on `alertInterval`, trigger event for activating or hiding.
 
-DashboardCalculator - Listen `AccessLogEvent` and `TrafficStatisticEvents` for updating UI
+`DashboardCalculator` - Listen `AccessLogEvent` and `TrafficStatisticEvents` for updating UI
 
 UI - Swing based application
 
